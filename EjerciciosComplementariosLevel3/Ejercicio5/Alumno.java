@@ -1,6 +1,8 @@
 package Ejercicio5;
 
 import java.time.LocalDate;
+import java.time.Period;
+
 
 public class Alumno {
     String apellido;
@@ -24,9 +26,9 @@ public class Alumno {
         return fechaDeNacimiento;
     }
 
-    public int getEdad (LocalDate fechaDeNacimiento, int añoActual) {
-        int añoNacimiento = fechaDeNacimiento.getYear();
-        int edad = añoActual- añoNacimiento;
-        return edad;
+    public int getEdad () {
+        LocalDate añoNacimiento = this.fechaDeNacimiento;
+        Period edad = Period.between(añoNacimiento, LocalDate.now());
+        return edad.getYears();
     }
 }

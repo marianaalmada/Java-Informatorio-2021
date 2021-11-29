@@ -17,7 +17,7 @@ public class Ejercicio5 {
 
         Map<String, Integer> alumnosMap = alumnos.stream()
             .collect(Collectors.toMap(alumno -> alumno.getApellido() + " " + alumno.getNombre(), 
-            alumno -> alumno.getEdad(alumno.getFechaDeNacimiento(), 2021)));
+            alumno -> alumno.getEdad()));
 
         System.out.println(alumnosMap);
     }
